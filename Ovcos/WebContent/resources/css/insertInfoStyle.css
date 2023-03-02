@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	font-family: 'SUIT-Regular';
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: black;
+}
+
+
+#wrap{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.7);
+    position: relative;
+}
+
+.popup_area{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    box-shadow: 1px 2px 4px rgb(0 0 0 / 25%);
+    border-radius : 8px;
+}
+
+.popup_top {
+	position : relative;
+	text-align: center;
+	align-items: center;
+	justify-content : center;
+	min-height : 56px;
+	padding-top : 20px;
+	font-size : 1.2rem;
+}
+
+.popup_area span{
+    display: block;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+#title{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.popup_body{
+	position : relative;
+	padding : 0px 55px 40px;
+	max-height : 710px;
+	overflow-y : auto;
+	overflow-x : hidden;
+}
+
+td{
+	padding: 10px 9px 0 10px;
+	font-size : 0.9rem;
+}
+#info{
+	width : 400px;
+    border-radius: 8px;
+    font-size : 0.9rem;
+    font-weight : 530;
+}
+
+#insertInfo{
+    position: relative;
+}
+
+
+
+
+input{
+    width: 300px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border: 0;
+    border-radius: 5px;
+    padding-left: 15px;
+    
+    border:none;
+    
+    overflow: visible;
+}
+
+td button{
+        text-transform: none;
+        overflow: visible;
+        margin-left: -66px;
+        border-radius: 3px;
+        padding : 3px 5px;
+		font-weight : 580;
+        border: none;
+        background-color:#ff7920;
+        color: white;
+    
+}
+
+#name{
+	background-color : white;
+	border : 1px solid lightgray;
+}
+
+
+.next_btn{
+    width: 320px;
+    height: 45px;
+    margin-top: 5px;
+    background-color:#ff7920;
+    color: white;
+    font-weight: bold;
+    border: none;
+	text-align : center;
+    border-radius: 8px;
+    margin-bottom : 70px;
+    margin-left : 110px;
+}
+
+#x-box{
+	position : relative;
+	margin-left : 450px;
+	z-index:999;
+}
+
+.fa-x{
+	position : inline-block;
+	padding:5px;
+	cursor : pointer;
+}

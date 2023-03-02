@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="loginMember">
+		SELECT  MEM_ID
+		      , MEM_PWD
+		      , MEM_NAME
+		      , MEM_NICK
+		      , MEM_INTRO
+		      , MEM_BIRTH
+		      , MEM_STATUS
+		      , MEM_LOC_INFO
+		      , MEM_PUBLIC_NY
+		      , MEM_GOAL_DTN
+		      , MEM_CODE_NY
+		      , MEM_RPR_CUM
+		      , MEM_API_TYPE
+		      , MEM_API_TOKEN
+		      , MEM_EML
+		      , MARKET_NY
+		FROM MEMBER
+		WHERE MEM_ID = ?
+		AND MEM_PWD = ?
+	</entry>
+	
+	<entry key="deleteNotice">
+		UPDATE
+	            NOTICE
+	        SET STATUS = 'N'
+	    WHERE NOTICE_NO =?
+    </entry>
+    
+    <entry key="insertMember">
+    	INSERT
+    	INTO MEMBER
+    	(
+    	   MEM_ID
+    	 , MEM_PWD
+    	 , MEM_NAME
+    	 , MEM_NICK
+    	 , MEM_BIRTH
+    	 , MEM_EML
+    	 , MARKET_NY  
+    	)
+    	VALUES
+    	(
+    	   ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ?
+    	 , ? 
+    	
+    	)
+    </entry>
+    <entry key="idCheck">
+SELECT 
+        COUNT(*) "COUNT"
+  FROM MEMBER
+ WHERE MEM_ID = ?
+ </entry>
+ 
+     <entry key="nickCheck">
+SELECT 
+        COUNT(*) "COUNT"
+  FROM MEMBER
+ WHERE MEM_NICK = ?
+ </entry>
+</properties>
