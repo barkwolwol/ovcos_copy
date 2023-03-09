@@ -57,7 +57,6 @@
     width: 94%;
     height: 100%;
     margin: auto;
-      
 }
 #p_img{
     width: 50px;
@@ -66,6 +65,7 @@
     border-radius: 50%;
     float: left;
     margin-right: 15px;
+    margin-bottom: 10px;
 }
 #p_img>img{
     width: 100%;
@@ -79,9 +79,26 @@
     font-weight: bold;
     line-height: 30px;
 }
+#p_date{
+display: inline;
+}
+
+#pimg{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
 #p_loca{
+    display: inline-block;
     font-size: 13px;
-    margin-top: 7px;
+    /* background-color: violet; */
+    
+    margin: 0;
+    padding: 0;
+    }
+#p_loca>img{
+    width: 25px;
+    height: 25px;
 }
 /* 더보기버튼 */
 #plus>div{
@@ -91,12 +108,39 @@
     justify-content: end;
 
 }
-#plus>div>img{
+#plus>div img{
     width: 30px;
     height: 30px;
     cursor: pointer;
-
 }
+/*더보기 드롭다운 부트스트랩*/
+#dropdown>button{
+    background-color: white;
+}
+#plus .btn-secondary{
+    background-color: white !important;
+    border: none !important;    
+}
+.dropdown-menu {
+    min-width: 7rem !important;
+}
+.dropdown-item:focus {
+    background-color: red;
+  }
+
+/*피드삭제모달*/
+.btn.btn-primary.delfeedbtn{
+    background-color: rgb(60, 108, 167); ;
+}
+.deltitle{
+    color:  rgb(60, 108, 167);
+    font-weight: bold;
+}
+#delokbody>*{
+    padding: 0;
+    line-height: 24px;
+}
+
 /* 피드 제목*/
 #f_title{
     width: 100%;
@@ -211,4 +255,7 @@ color:red
     0%{transform:scale(.2);}
     40%{transform:scale(1.2);}
     100%{transform:scale(1);}
+}
+#ct3 * {
+    border: 0px;
 }

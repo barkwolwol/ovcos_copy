@@ -31,6 +31,12 @@ public class FollowDao {
 	}
 	
 
+	/**
+	 * 페이징개수조회
+	 * @param conn
+	 * @param userId
+	 * @return
+	 */
 	public int selectListCount(Connection conn, String userId) {
 		
 	
@@ -87,8 +93,9 @@ public class FollowDao {
 			
 			while(rset.next()) {
 				
-				list.add(new Follow(rset.getString("mem_id"),
-									rset.getString("mem_name"),
+				list.add(new Follow(rset.getString("mem_id"),//로그인아이디
+									rset.getString("flw_id"),//팔로한아이디
+									rset.getString("mem_name"), //팔로한유저이름
 									rset.getString("mem_intro")
 						));
 			}
@@ -134,7 +141,8 @@ public class FollowDao {
 			while(rset.next()) {
 				
 				list.add(new Follow(rset.getString("mem_id"),
-						rset.getString("mem_name"),
+						rset.getString("flw_id"),
+						rset.getString("mem_name"), 
 						rset.getString("mem_intro")
 						));
 			}
@@ -180,9 +188,9 @@ public class FollowDao {
 			while(rset.next()) {
 				
 				list.add(new Follow(rset.getString("mem_id"),
-						rset.getString("mem_name"),
-						rset.getString("mem_intro")
-						));
+									rset.getString("mem_name"),
+									rset.getString("mem_intro")
+									));
 			}
 			
 		} catch (SQLException e) {
@@ -204,7 +212,7 @@ public class FollowDao {
 	 * @param memName
 	 * @return
 	 */
-	public ArrayList<Follow> selectSearchList(Connection conn, String memName){
+	public ArrayList<Follow> selectSearchList(Connection conn, String memName, String userId){
 			
 			ArrayList<Follow> list = new ArrayList<Follow>();
 			
@@ -218,12 +226,14 @@ public class FollowDao {
 				pstmt = conn.prepareStatement(sql);
 				
 				pstmt.setString(1, memName);
+				pstmt.setString(2, userId);
 				
 				rset = pstmt.executeQuery();
 				
 				while(rset.next()) {
 					
-					list.add(new Follow(rset.getString("mem_id"),
+					list.add(new Follow(
+							rset.getString("MEM_ID"),
 							rset.getString("mem_name"),
 							rset.getString("mem_intro")
 							));
@@ -313,8 +323,7 @@ public class FollowDao {
 			
 			while(rset.next()) {
 				
-				list.add(new Follow(rset.getString("MEM_ID")
-								
+				list.add(new Follow(rset.getString("mem_id")
 						));
 			}
 			

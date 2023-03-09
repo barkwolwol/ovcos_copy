@@ -1,18 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="views/common/navForIndex.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>OVCOS - 새로운 모험의 시작</title>
 <link rel="stylesheet" href="resources/css/navStyle.css">
 <link rel="stylesheet" href="resources/css/start.css">
 <script src="resources/js/jquery-3.6.3.min.js"></script>
 </head>
-<body>
+ <script type="text/javascript">
+ window.history.forward();
+ function noBack(){window.history.forward();}
+</script>
+
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
   
-    <%@ include file="views/common/navForIndex.jsp" %>
-    
     <script>
     
       $(function(){
@@ -35,5 +39,8 @@
       <div style="background-color: black; width: 100vw; height: 100vh;">
         
       </div>
+      
+
+
 </body>
 </html>

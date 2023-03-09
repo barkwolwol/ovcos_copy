@@ -16,7 +16,7 @@ public class FollowService {
 	
 	
 	/**
-	 * 조회수조회....안해도되는딧
+	 * 페이징개수조회
 	 * @param userId
 	 * @return
 	 */
@@ -96,11 +96,11 @@ public class FollowService {
 	 * @param memName
 	 * @return
 	 */
-	public ArrayList<Follow> selectSearchList(String memName){
+	public ArrayList<Follow> selectSearchList(String memName, String userId){
 		
 		Connection conn = getConnection();
 		
-		ArrayList<Follow> list = new FollowDao().selectSearchList(conn, memName);
+		ArrayList<Follow> list = new FollowDao().selectSearchList(conn, memName, userId);
 		
 		close(conn);
 		

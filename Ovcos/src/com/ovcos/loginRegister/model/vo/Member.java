@@ -1,7 +1,5 @@
 package com.ovcos.loginRegister.model.vo;
 
-import java.sql.Date;
-
 public class Member {
 	private String memId;
 	private String memPwd;
@@ -21,8 +19,7 @@ public class Member {
 	private String marketNy;
 	
 	public Member() {}
-
-
+	
 	public Member(String memId, String memPwd, String memName, String memNick, String memIntro, String memBirth,
 			String memStatus, String memLocInfo, String memPublicNy, int memGoalDtn, String memCodeNy, int memRprCum,
 			String memApiType, String memApiToken, String memEml, String marketNy) {
@@ -45,6 +42,8 @@ public class Member {
 		this.marketNy = marketNy;
 	}
 
+
+
 	
 	public Member(String memId, String memPwd, String memName, String memNick, String memBirth, String memEml,
 			String marketNy) {
@@ -57,6 +56,20 @@ public class Member {
 		this.memEml = memEml;
 		this.marketNy = marketNy;
 	}
+
+	public Member(String memId) {
+		super();
+		this.memId = memId;
+	}
+	
+	
+	 public Member(String memId, String memPwd) {
+		 super(); 
+		 this.memId = memId;
+		 this.memPwd = memPwd; 
+	 }
+	 
+
 
 	public String getMemId() {
 		return memId;
@@ -177,14 +190,18 @@ public class Member {
 	public void setMemEml(String memEml) {
 		this.memEml = memEml;
 	}
+	
+	
 
 	public String getMarketNy() {
 		return marketNy;
 	}
 
+
 	public void setMarketNy(String marketNy) {
 		this.marketNy = marketNy;
 	}
+
 
 	@Override
 	public String toString() {
@@ -194,6 +211,5 @@ public class Member {
 				+ memCodeNy + ", memRprCum=" + memRprCum + ", memApiType=" + memApiType + ", memApiToken=" + memApiToken
 				+ ", memEml=" + memEml + ", marketNy=" + marketNy + "]";
 	}
+
 }
-	
-	
