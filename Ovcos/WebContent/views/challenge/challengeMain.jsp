@@ -30,6 +30,10 @@
             width: 100%;
             box-sizing: border-box;
         }
+
+        .count-area{
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -42,8 +46,8 @@
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">나의 챌린지</h1>
                 <p class="lead fw-normal text-white-50 mb-0">
-                    <span>참가중 <%= totalProgressCount %> [대회 : <%= contestProgressCount %> / 일반 : <%= normalProgressCount %>]</span> <br>
-                    <span>참가완료 <%= totalCompleteCount %> [대회 : <%= contestCompleteCount %> / 일반 : <%= normalCompleteCount %>]</span>
+                    <span class="count-area" onclick="countIng();">참가중 <%= totalProgressCount %> [대회 : <%= contestProgressCount %> / 일반 : <%= normalProgressCount %>]</span> <br>
+                    <span class="count-area" onclick="countComplete();">참가완료 <%= totalCompleteCount %> [대회 : <%= contestCompleteCount %> / 일반 : <%= normalCompleteCount %>]</span>
                 </p>
             </div>
         </div>
@@ -59,7 +63,7 @@
             <img src="resources/image/challengeMain2.png" style="margin-top: 40px;">
             <br><br>
             <a href="cntsMain.ch" style="text-decoration: none; font-size: 20px; margin-right: 50px;">대회챌린지</a>
-            <a href="" style="text-decoration: none; font-size: 20px; ">일반챌린지</a>
+            <a href="ncList.ch?local=0" style="text-decoration: none; font-size: 20px; ">일반챌린지</a>
             <br>
         </div>
     <% }else { %>
@@ -87,7 +91,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">참가하기</a>
+                                <div class="text-center">
                                 </div>
                             </div>
                         </div>
@@ -97,17 +101,20 @@
                     <% for(NormalChallenge n : list2) { %>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                alt="..." />
+                            <% if(n.getChangeName() != null) { %>
+                                <img class="card-img-top" height="160px" src="<%= contextPath %>/resources/upload/<%= n.getChangeName() %>" alt="..."/>
+                            <% }else { %>
+                                <img class="card-img-top" height="160px" src="<%= contextPath %>/resources/upload/defaultImg.png" alt="defaultImg.png"/>
+                            <% } %>
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <h5 class="fw-bolder"><%= n.getNormalChallengeTitle() %></h5>
-                                    <%= n.getNormalChallengeLocal() %><br>
+                                    <%= n.getLocalName() %><br>
                                     <%= n.getNormalChallengeDate() %>
                                 </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">참가하기</a>
+                                <div class="text-center">
                                 </div>
                             </div>
                         </div>
